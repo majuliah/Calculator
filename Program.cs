@@ -8,7 +8,6 @@ namespace Calculadora
         static void Main(string[] args)
         {
             Menu();
-            
         }
 
         static void Menu()
@@ -22,7 +21,23 @@ namespace Calculadora
             WriteLine($"**** [ 0 ] Close Solution     ****");
             
             short answer = short.Parse(ReadLine());
-            
+            while (answer != 0)
+            {
+                switch (answer)
+                {
+                    case 1: Sum();
+                        break;
+                    case 2: Subtraction();
+                        break;
+                    case 3: Division();
+                        break;
+                    case 4: Multiplication();
+                        break;
+                    default: 
+                        WriteLine($"Closing solution...");
+                        break;
+                }
+            }
         }
 
         static void Sum()
