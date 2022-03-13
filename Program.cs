@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 using static System.Console;
 
 namespace Calculadora
@@ -21,8 +22,6 @@ namespace Calculadora
             WriteLine($"**** [ 0 ] Close Solution     ****");
             
             short answer = short.Parse(ReadLine());
-            while (answer != 0)
-            {
                 switch (answer)
                 {
                     case 1: Sum();
@@ -33,11 +32,11 @@ namespace Calculadora
                         break;
                     case 4: Multiplication();
                         break;
-                    default: 
-                        WriteLine($"Closing solution...");
+                    case 0: System.Environment.Exit(0);
+                        break;
+                    default: Menu();
                         break;
                 }
-            }
         }
 
         static void Sum()
@@ -53,6 +52,7 @@ namespace Calculadora
             
             WriteLine($"The result of the sum is: {result.ToString(CultureInfo.InvariantCulture)}");
             ReadKey();
+            Menu();
         }
 
         static void Subtraction()
@@ -68,6 +68,7 @@ namespace Calculadora
             
             WriteLine($"The result of the subtraction is: {result.ToString(CultureInfo.InvariantCulture)}");
             ReadKey();
+            Menu();
         }
 
         static void Division()
@@ -83,6 +84,7 @@ namespace Calculadora
             
             WriteLine($"The result of the division is: {result.ToString(CultureInfo.InvariantCulture)}");
             ReadKey();
+            Menu();
         }
 
         static void Multiplication()
@@ -98,6 +100,7 @@ namespace Calculadora
             
             WriteLine($"The result of the multiplication is: {result.ToString(CultureInfo.InvariantCulture)}");
             ReadKey();
+            Menu();
         }
     }
 }
