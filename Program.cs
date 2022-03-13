@@ -7,6 +7,12 @@ namespace Calculadora
     {
         static void Main(string[] args)
         {
+            Menu();
+            
+        }
+
+        static void Menu()
+        {
             WriteLine("Welcome to my first Calculator! \n ");
             WriteLine($"Wich operation do you want to do? ");
             WriteLine($"**** [ 1 ] Sum                ****");
@@ -14,30 +20,9 @@ namespace Calculadora
             WriteLine($"**** [ 3 ] Division           ****");
             WriteLine($"**** [ 4 ] Multiplication     ****");
             WriteLine($"**** [ 0 ] Close Solution     ****");
-
-            int answer = int.Parse(ReadLine());
-
-            while (answer != 0)
-            {
-                switch (answer)
-                {
-                    case 1:
-                        Sum();
-                        break;
-                    case 2:
-                        Subtraction();
-                        break;
-                    case 3:
-                        Division();
-                        break;
-                    case 4:
-                        Multiplication();
-                        break;
-                    default: 
-                        WriteLine($"Closing solution...");
-                        break;
-                }
-            }
+            
+            short answer = short.Parse(ReadLine());
+            
         }
 
         static void Sum()
